@@ -1,6 +1,8 @@
 @font-face {
-    font-family: Milligram-Bold;
-    src: url(../fonts/Milligram-Bold.ttf); 
+    /* font-family: Milligram-Bold;
+    src: url(../fonts/Milligram-Bold.ttf);  */
+    font-family: BeausiteClassic-Medium;
+    src: url(../fonts/BeausiteClassic-Medium.otf);  
 }
 @font-face {
     font-family: VulfSans-Regular;
@@ -12,18 +14,12 @@
     src: url(../fonts/Roobert-Regular.ttf); 
 } */
 
-/* RESETS */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
-}
-
 /* VARIABLES */
 :root{
     /* colors */
     --body-clr: #0a1628;
-    --title-clr: hsl(0, 0%, 100%);
+    /* --title-clr: hsl(0, 0%, 100%); */
+    --title-clr: #eee;
     --text-clr: #ddd;
     --first-clr: hsl(292, 96%, 44%);
     --second-clr: hsl(331, 90%, 61%);
@@ -34,12 +30,19 @@
 
     /* fonts family */
     --body-ff: VulfSans-Regular;
-    --header-ff: Milligram-Bold;
+    --header-ff: BeausiteClassic-Medium;
+    /* --header-ff: Milligram-Bold; */
 
     /* fonts size */
     --normal-fs: 1.05rem;
     --medium-fs: 1.26rem;
-    --big-fs: 3.9rem;
+    /* --big-fs: 3.9rem; */
+    --big-fs: 2.7rem;
+    --big-fs-smallscreen: 4.2rem;
+    --big-fs-mediumscreen: 5.4rem;
+    --big-fs-largescreen: 6.2rem;
+    --big-fs-xlargescreen: 8rem;
+    --big-fs-overlargescreen: 10rem;
 
     /* fonts weight */
     --regular-fw: 1rem;
@@ -50,7 +53,15 @@
     --container-padding: 6rem;
 }
 
-/* MAIN REPONSIVENESS >> MOBILE-FIRST DESIGN */
+/* RESETS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+
+/* DEFAULT REPONSIVENESS >> MOBILE-FIRST DESIGN */
 /* 1. Smallest Screen e.g from watches to mobile phones */
 body{
     background: var(--body-clr);
@@ -62,8 +73,8 @@ body{
 h1, h3, .nav__logo{ 
     color: var(--title-clr);
     font-family: var(--header-ff);
-    /* font-weight: var(--regular); */
-    text-transform: capitalize;
+    font-weight: var(--regular);
+    text-transform: uppercase;
 }
 
 /* REUSABLE CLASSES */
@@ -74,7 +85,39 @@ h1, h3, .nav__logo{
     /* background: var(--first-clr); */
     background: green;
 }
+.flex, .flex__row{
+    display: flex;
+}
 
+/* NAVBAR */
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none
+}
+img{
+    max-width: 100%;
+}
+.nav__btns .btn{
+    display: none;
+}
+
+/* BANNER */
+.home__title{
+    font-size: var(--big-fs);
+    /* line-height: 1.25; */
+    margin-bottom: 1.5rem;
+}
+.flex__row{
+    flex-direction: column;
+}
+.span__right{
+    text-align: right;
+}
+.span__center{
+    text-align:center
+}
 
 /* ######################################################## */
 
@@ -88,7 +131,9 @@ h1, h3, .nav__logo{
         padding-inline: .8rem;
         background: var(--first-clr);
     }
-    
+    .home__title{
+        font-size: var(--big-fs-smallscreen);
+    }
     /* .home__container{
         background-color: var(--third-clr);
         justify-content: center;
@@ -104,6 +149,9 @@ h1, h3, .nav__logo{
         margin-inline: auto;
         padding-inline: .8rem;
         background: var(--second-clr);
+    }
+    .home__title{
+        font-size: var(--big-fs-mediumscreen);
     }
     
     /* .home__container{
@@ -122,6 +170,9 @@ h1, h3, .nav__logo{
         padding-inline: .8rem;
         background: var(--third-clr);
     }
+    .home__title{
+        font-size: var(--big-fs-largescreen);
+    }
     
     /* .home__container{
         background-color: var(--third-clr);
@@ -131,15 +182,56 @@ h1, h3, .nav__logo{
     }  */
 }
 
-/* 5. For extralarge screens e.g. Laptop (Regular) */
+/* 5. For xlarge screens e.g. Laptop (Regular) */
 @media screen and (min-width: 1367px) and (max-width: 1920px){
     .container{
         max-width: 1920px;
         margin-inline: auto;
         padding-inline: .8rem;
         /* background: var(--second-clr); */
-        background: red;
+        background: none;
     }
+    .home__title{
+        font-size: var(--big-fs-xlargescreen);
+        padding-inline: 6rem 8.5rem;
+        padding-top: 5rem;
+    }
+
+    .nav, .nav__list{
+        display: flex;
+    }
+    .nav{
+        justify-content: space-between; 
+        align-items: center;
+        column-gap: 2rem; /*** add this if menu is moved to right too close to another item*/ 
+        /* background: var(--first-clr); */
+        height: 5rem;
+    }
+    .nav__list{
+        column-gap: 2.5rem;
+    }
+    .nav__link{
+        color: var(--title-clr);
+        font-family: var(--body-ff);
+        transition: .3s;
+    }
+    .nav__btns{
+        display: flex;
+        align-items: center;
+        column-gap: 1.5rem;
+    }
+    .nav__btns .btn{
+        border-radius: 6rem;
+    }
+    .nav__toggle{
+        font-size: 1.75rem;
+        color: var(--title-clr);
+        display: none;
+    }
+    /*** Use this if u want to move menu to right or left*/
+    /* .nav__menu{
+        margin-right: auto
+    } */
     
     /* .home__container{
         background-color: var(--third-clr);
@@ -157,6 +249,9 @@ h1, h3, .nav__logo{
         padding-inline: .8rem;
         /* background: var(--second-clr); */
         background: yellow;
+    }
+    .home__title{
+        font-size: var(--big-fs-overlargescreen);
     }
     
     /* .home__container{
