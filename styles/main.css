@@ -1,0 +1,168 @@
+@font-face {
+    font-family: Milligram-Bold;
+    src: url(../fonts/Milligram-Bold.ttf); 
+}
+@font-face {
+    font-family: VulfSans-Regular;
+    src: url(../fonts/VulfSans-Regular.ttf); 
+}
+
+/* @font-face {
+    font-family: Roobert;
+    src: url(../fonts/Roobert-Regular.ttf); 
+} */
+
+/* RESETS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+/* VARIABLES */
+:root{
+    /* colors */
+    --body-clr: #0a1628;
+    --title-clr: hsl(0, 0%, 100%);
+    --text-clr: #ddd;
+    --first-clr: hsl(292, 96%, 44%);
+    --second-clr: hsl(331, 90%, 61%);
+    --third-clr: hsl(248, 70%, 50%);
+    --primary-clr: ;
+    --secondary-clr: ;
+    --tertiary-clr: ;
+
+    /* fonts family */
+    --body-ff: VulfSans-Regular;
+    --header-ff: Milligram-Bold;
+
+    /* fonts size */
+    --normal-fs: 1.05rem;
+    --medium-fs: 1.26rem;
+    --big-fs: 3.9rem;
+
+    /* fonts weight */
+    --regular-fw: 1rem;
+    --semibold-fw: 2rem;
+    --bold-fw: 1rem;
+
+    /* padding */
+    --container-padding: 6rem;
+}
+
+/* MAIN REPONSIVENESS >> MOBILE-FIRST DESIGN */
+/* 1. Smallest Screen e.g from watches to mobile phones */
+body{
+    background: var(--body-clr);
+    color: var(--text-clr);
+    font-family: var(--body-ff);
+    font-size: var(--normal-fs);
+}
+
+h1, h3, .nav__logo{ 
+    color: var(--title-clr);
+    font-family: var(--header-ff);
+    /* font-weight: var(--regular); */
+    text-transform: capitalize;
+}
+
+/* REUSABLE CLASSES */
+.container{
+    max-width: 576px;
+    margin-inline: auto;
+    padding-inline: .8rem;
+    /* background: var(--first-clr); */
+    background: green;
+}
+
+
+/* ######################################################## */
+
+
+/* OTHER RESPONSIVENESS >> BREAKPOINTS */
+/* 2. For small screens e.g. iPad Mini Tablet */
+@media screen and (min-width: 577px) and (max-width: 768px){
+    .container{
+        max-width: 768px;
+        margin-inline: auto;
+        padding-inline: .8rem;
+        background: var(--first-clr);
+    }
+    
+    /* .home__container{
+        background-color: var(--third-clr);
+        justify-content: center;
+        align-items: center;
+        padding: 6rem 1rem;
+    }  */
+}
+
+/* 3. For medium screens e.g. iPad Air Tablet */
+@media screen and (min-width: 769px) and (max-width: 992px){
+    .container{
+        max-width: 992px;
+        margin-inline: auto;
+        padding-inline: .8rem;
+        background: var(--second-clr);
+    }
+    
+    /* .home__container{
+        background-color: var(--third-clr);
+        justify-content: center;
+        align-items: center;
+        padding: 6rem 1rem;
+    }  */
+}
+
+/* 4. For large screens e.g. iPad Pro Tablet and small Laptop */
+@media screen and (min-width: 993px) and (max-width: 1366px){
+    .container{
+        max-width: 1366px;
+        margin-inline: auto;
+        padding-inline: .8rem;
+        background: var(--third-clr);
+    }
+    
+    /* .home__container{
+        background-color: var(--third-clr);
+        justify-content: center;
+        align-items: center;
+        padding: 6rem 1rem;
+    }  */
+}
+
+/* 5. For extralarge screens e.g. Laptop (Regular) */
+@media screen and (min-width: 1367px) and (max-width: 1920px){
+    .container{
+        max-width: 1920px;
+        margin-inline: auto;
+        padding-inline: .8rem;
+        /* background: var(--second-clr); */
+        background: red;
+    }
+    
+    /* .home__container{
+        background-color: var(--third-clr);
+        justify-content: center;
+        align-items: center;
+        padding: 6rem 1rem;
+    }  */
+}
+
+/* 6. For overlarge screens */
+@media screen and (min-width: 1921px){
+    .container{
+        max-width: 2800px;
+        margin-inline: auto;
+        padding-inline: .8rem;
+        /* background: var(--second-clr); */
+        background: yellow;
+    }
+    
+    /* .home__container{
+        background-color: var(--third-clr);
+        justify-content: center;
+        align-items: center;
+        padding: 6rem 1rem;
+    }  */
+}
