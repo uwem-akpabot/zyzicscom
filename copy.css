@@ -1,0 +1,225 @@
+@font-face {
+    /* font-family: Milligram-Bold;
+    src: url(../fonts/Milligram-Bold.ttf);  */
+    font-family: BeausiteClassic-Medium;
+    src: url(../fonts/BeausiteClassic-Medium.otf);  
+}
+@font-face {
+    font-family: VulfSans-Regular;
+    src: url(../fonts/VulfSans-Regular.ttf); 
+}
+
+/* VARIABLES */
+:root{
+    /* colors */
+    --body-clr: #000;
+    /* --body-clr: #0a1628; */
+    /* --title-clr: hsl(0, 0%, 100%); */
+    --title-clr: #eee;
+    --text-clr: #ddd;
+    --first-clr: hsl(292, 96%, 44%);
+    --second-clr: hsl(331, 90%, 61%);
+    --third-clr: hsl(248, 70%, 50%);
+    --primary-clr: ;
+    --secondary-clr: ;
+    --tertiary-clr: ;
+
+    /* fonts family */
+    --body-ff: VulfSans-Regular;
+    --header-ff: BeausiteClassic-Medium;
+    /* --header-ff: Milligram-Bold; */
+
+    /* fonts size */
+    --normal-fs: 1.05rem;
+    --medium-fs: 1.26rem;
+    /* --big-fs: 3.9rem; */
+    --big-fs: 7rem;
+    --big-fs-smallscreen: 4.2rem;
+    --big-fs-mediumscreen: 5.4rem;
+    --big-fs-largescreen: 6.2rem;
+    --big-fs-xlargescreen: 8rem;
+    --big-fs-overlargescreen: 10rem;
+
+    /* fonts weight */
+    --regular-fw: 1rem;
+    --semibold-fw: 2rem;
+    --bold-fw: 1rem;
+
+    /* padding */
+    /* --container-padding: 6rem; */
+}
+
+/* RESETS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+
+/* DEFAULT REPONSIVENESS >> MOBILE-FIRST DESIGN */
+/* 1. Smallest Screen e.g from watches to mobile phones */
+body{
+    background: var(--body-clr);
+    color: var(--text-clr);
+    font-family: var(--body-ff);
+    font-size: var(--normal-fs);
+}
+
+h1, h3, .nav__logo{ 
+    color: var(--title-clr);
+    font-family: var(--header-ff);
+    font-weight: var(--regular);
+}
+
+/* REUSABLE CLASSES */
+/* .container{
+    max-width: 375px;
+    margin-inline: auto;
+    padding-inline: .8rem; 
+} */
+.flex{
+    display: flex;
+}
+
+/* NAVBAR */
+/* ul{
+    list-style: none;
+}
+a{
+    text-decoration: none
+}
+img{
+    max-width: 100%;
+}
+.nav__btns .btn{
+    display: none;
+} */
+
+/* BANNER */
+/* .home__title{
+    font-size: var(--big-fs);
+    line-height: .86;
+    line-height: 1.25; 
+    margin-bottom: 1.5rem;
+    width:78%;
+    background: green;
+} */
+
+/* ######################################################## */
+
+
+/* OTHER RESPONSIVENESS >> BREAKPOINTS */
+/* 2. For small screens e.g. iPad Mini Tablet */
+/* 
+@media screen and (min-width: 577px) and (max-width: 768px){
+    .container{
+        max-width: 768px;
+        margin-inline: auto;
+        padding-inline: .8rem;
+        background: var(--first-clr);
+    }
+    .home__title{
+        font-size: var(--big-fs-smallscreen);
+    }
+} */
+
+/* 3. For medium screens e.g. iPad Air Tablet */
+/* @media screen and (min-width: 769px) and (max-width: 992px){
+    .container{
+        max-width: 992px;
+        margin-inline: auto;
+        padding-inline: .8rem;
+        background: var(--second-clr);
+    }
+    .home__title{
+        font-size: var(--big-fs-mediumscreen);
+    }
+} */
+
+/* 4. For large screens e.g. iPad Pro Tablet and small Laptop */
+/* @media screen and (min-width: 993px) and (max-width: 1366px){
+    .container{
+        max-width: 1366px;
+        margin-inline: auto;
+        padding-inline: .8rem;
+        background: var(--third-clr);
+    }
+    .home__title{
+        font-size: var(--big-fs-largescreen);
+    }
+    
+} */
+
+/* 5. For xlarge screens e.g. Laptop (Regular) */
+@media screen and (min-width: 1367px) and (max-width: 1920px){
+    .container{
+        max-width: 1920px;
+        margin-inline: auto;
+        padding-inline: .8rem;
+        /* background: var(--second-clr); */
+        background: none;
+    }
+    .home__title{
+        font-size: var(--big-fs-xlargescreen);
+        padding-inline: 6rem 8.5rem;
+        padding-top: 5rem;
+    }
+
+    .nav, .nav__list{
+        display: flex;
+    }
+    .nav{
+        justify-content: space-between; 
+        align-items: center;
+        column-gap: 2rem; /*** add this if menu is moved to right too close to another item*/ 
+        /* background: var(--first-clr); */
+        height: 5rem;
+    }
+    .nav__list{
+        column-gap: 2.5rem;
+    }
+    .nav__link{
+        color: var(--title-clr);
+        font-family: var(--body-ff);
+        transition: .3s;
+    }
+    .nav__btns{
+        display: flex;
+        align-items: center;
+        column-gap: 1.5rem;
+    }
+    .nav__btns .btn{
+        border-radius: 6rem;
+    }
+    .nav__toggle{
+        font-size: 1.75rem;
+        color: var(--title-clr);
+        display: none;
+    }
+    /*** Use this if u want to move menu to right or left*/
+    /* .nav__menu{
+        margin-right: auto
+    } */
+    
+    /* .home__container{
+        background-color: var(--third-clr);
+        justify-content: center;
+        align-items: center;
+        padding: 6rem 1rem;
+    }  */
+}
+
+/* 6. For overlarge screens */
+/* @media screen and (min-width: 1921px){
+    .container{
+        max-width: 2800px;
+        margin-inline: auto;
+        padding-inline: .8rem;
+        /* background: var(--second-clr); */
+        background: yellow;
+    }
+    .home__title{
+        font-size: var(--big-fs-overlargescreen);
+    }
+} */
